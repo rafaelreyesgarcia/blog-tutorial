@@ -5,6 +5,7 @@ import {schemaTypes} from './schemas'
 import { myTheme } from './theme'
 import StudioNavbar from './components/StudioNavbar'
 import Logo from './components/Logo'
+import { getDefaultDocumentNode } from './structure'
 
 export default defineConfig({
   basePath: '/studio',
@@ -14,7 +15,9 @@ export default defineConfig({
   projectId: 'antrs11p',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool({
+    defaultDocumentNode: getDefaultDocumentNode
+  }), visionTool()],
 
   schema: {
     types: schemaTypes,

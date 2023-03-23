@@ -8,13 +8,14 @@ export const metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children, route
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  route: string
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className='max-w-7xl mx-auto'>
         <Header />
         <Banner />
         {children}
